@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 29, 2015 2:55:19 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.PurchaseOrder" table="PURCHASEORDER">
+        <id name="purchaseOrderId" type="long">
+            <column name="PURCHASEORDERID" />
+            <generator class="increment" />
+        </id>
+        <property name="purchaseOrderNumber" type="java.lang.String">
+            <column name="PURCHASEORDERNUMBER" />
+        </property>
+        <property name="sendDate" type="java.util.Date">
+            <column name="SENDDATE" />
+        </property>
+        <property name="totalPrice" type="double">
+            <column name="TOTALPRICE" />
+        </property>
+        <property name="objStatus" type="long">
+            <column name="OBJSTATUS" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="CREATEDATE" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" />
+        </property>
+        <many-to-one name="admin" class="model.Admin" fetch="join">
+            <column name="ADMINID" />
+        </many-to-one>
+        <set name="products" table="PRODUCT" inverse="false" lazy="true">
+            <key>
+                <column name="PURCHASEORDERID" />
+            </key>
+            <one-to-many class="model.Product" />
+        </set>
+    </class>
+</hibernate-mapping>

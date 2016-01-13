@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 29, 2015 2:55:19 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.EmployeeProject" table="EMPLOYEEPROJECT">
+        <id name="employeeProjectId" type="long">
+            <column name="EMPLOYEEPROJECTID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="employee" class="model.Employee" fetch="join">
+            <column name="EMPLOYEEID" />
+        </many-to-one>
+        <many-to-one name="project" class="model.Project" fetch="join">
+            <column name="PROJECTID" />
+        </many-to-one>
+        <property name="startDate" type="java.util.Date">
+            <column name="STARTDATE" />
+        </property>
+        <property name="endDate" type="java.util.Date">
+            <column name="ENDDATE" />
+        </property>
+        <property name="objStatus" type="long">
+            <column name="OBJSTATUS" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="CREATEDATE" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" />
+        </property>
+    </class>
+</hibernate-mapping>

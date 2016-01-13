@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 29, 2015 2:55:19 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Salary" table="SALARY">
+        <id name="salaryId" type="long" access="field">
+            <column name="SALARYID" />
+            <generator class="increment" />
+        </id>
+        <property name="salaryAmount" type="double" access="field">
+            <column name="SALARYAMOUNT" />
+        </property>
+        <property name="startDate" type="java.util.Date" access="field">
+            <column name="STARTDATE" />
+        </property>
+        <property name="objStatus" type="long" access="field">
+            <column name="OBJSTATUS" />
+        </property>
+        <property name="createDate" type="java.util.Date" access="field">
+            <column name="CREATEDATE" />
+        </property>
+        <property name="remark" type="java.lang.String" access="field">
+            <column name="REMARK" />
+        </property>
+    </class>
+</hibernate-mapping>

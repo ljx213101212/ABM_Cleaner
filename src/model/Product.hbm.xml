@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 29, 2015 2:55:19 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="model.Product" table="PRODUCT">
+        <id name="productId" type="long">
+            <column name="PRODUCTID" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="image" type="java.lang.String">
+            <column name="IMAGE" />
+        </property>
+        <property name="unit" type="java.lang.String">
+            <column name="UNIT" />
+        </property>
+        <property name="quantity" type="double">
+            <column name="QUANTITY" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" />
+        </property>
+        <property name="objStatus" type="long">
+            <column name="OBJSTATUS" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="CREATEDATE" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" />
+        </property>
+        <many-to-one name="purchaseOrder" class="model.PurchaseOrder" fetch="join">
+            <column name="PURCHASEORDERID" />
+        </many-to-one>
+        <many-to-one name="vendor" class="model.Vendor" fetch="join">
+            <column name="VENDORID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

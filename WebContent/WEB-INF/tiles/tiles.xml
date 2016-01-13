@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+  <definition name="adminLayout" template="/WEB-INF/jsp/template/admin.jsp">
+    <put-attribute name="title" value="Simple Tiles application without Struts" />
+    <put-attribute name="header" value="/WEB-INF/jsp/admin/header_main.jsp" />
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/body_main.jsp" />
+     <put-attribute name="menu" value="/WEB-INF/jsp/admin/menu_main.jsp" />
+    <put-attribute name="sideBar" value="/WEB-INF/jsp/admin/sideBar_main.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/jsp/admin/footer_main.jsp" />
+    <put-attribute name="cssFile" value="/WEB-INF/jsp/admin/cssPath_main.jsp" />
+    <put-attribute name="jsFile" value="/WEB-INF/jsp/admin/jsPath_main.jsp"/>
+    
+  </definition>
+  
+   <definition name="admin_main"  extends="adminLayout">
+  		  <put-attribute name="body"    
+            value="/WEB-INF/jsp/admin/body_main.jsp" />
+  </definition>
+  
+  <definition name="employee_table"  extends="adminLayout">
+  		  <put-attribute name="body"    
+            value="/WEB-INF/jsp/admin/body_table.jsp" />
+          <put-attribute name="sideBar" 
+          value="/WEB-INF/jsp/admin/sideBar_employeeInfo.jsp" />
+             <put-attribute name="jsFile"    
+            value="/WEB-INF/jsp/admin/jsPath_employeeInfo.jsp" />
+  </definition>
+  
+  <definition name="guestLayout" template="/WEB-INF/jsp/template/guest.jsp">
+    <put-attribute name="title" value="Simple Tiles application without Struts" />
+    <put-attribute name="header" value="/WEB-INF/jsp/base/header.jsp" />
+    <put-attribute name="cssFile" value="/WEB-INF/jsp/base/cssPath.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/base/menu.jsp" />
+    <put-attribute name="body" value="/WEB-INF/jsp/base/body.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/jsp/base/footer.jsp" />
+ 
+    <put-attribute name="jsFile" value="/WEB-INF/jsp/base/jsPath.jsp"/>
+    <put-attribute name="sideBar" value="/WEB-INF/jsp/base/SideBar.jsp" />
+    
+  </definition>
+  
+    <definition name="main_page"  extends="guestLayout">
+     	  <put-attribute name="header"    
+            value="/WEB-INF/jsp/guest/header_main.jsp" />
+          <put-attribute name="cssFile"    
+            value="/WEB-INF/jsp/guest/cssPath_main.jsp" />
+          <put-attribute name="menu"    
+            value="/WEB-INF/jsp/guest/menu_main.jsp" />
+  		  <put-attribute name="body"    
+            value="/WEB-INF/jsp/guest/body_main.jsp" />
+          <put-attribute name="jsFile" 
+            value="/WEB-INF/jsp/guest/jsPath_main.jsp" />  
+          <put-attribute name="footer"    
+            value="/WEB-INF/jsp/guest/footer_main.jsp" />    
+  </definition>
+  
+  <definition name="myapp.homepage" template="/WEB-INF/jsp/template/guest.jsp">
+    <put-attribute name="title" value="Tiles tutorial homepage" />
+    <put-attribute name="header" value="/WEB-INF/jsp/base/header.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/jsp/base/menu.jsp" />
+    <put-attribute name="body" value="/WEB-INF/jsp/base/body.jsp" />
+     <put-attribute name="footer" value="/WEB-INF/jsp/base/footer.jsp" />
+  </definition>
+  
+</tiles-definitions>
