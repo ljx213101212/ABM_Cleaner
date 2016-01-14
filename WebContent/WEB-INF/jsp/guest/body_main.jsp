@@ -21,12 +21,12 @@
                         <div class="jx-login-wrapper">
                             <form class="jx-login-form-signin">       
                                 <h2 class="jx-login-form-signin-heading">Please login</h2>
-                                <input type="text" class="jx-login-form-control" name="username" placeholder="username" required="" autofocus="" />
-                                <input type="password" class="jx-login-form-control" name="password" placeholder="Password" required=""/>      
+                                <input type="text" id="username" class="jx-login-form-control" name="username" placeholder="username" required="" autofocus="" />
+                                <input type="password" id="password" class="jx-login-form-control" name="password" placeholder="Password" required=""/>      
                                 <label class="checkbox">
                                     <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
                                 </label>
-                                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+                                <button id="btnSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
                             </form>
                         </div>
                     </div>
